@@ -31,5 +31,6 @@ Open http://localhost:5173.
 
 ## Login
 
-Auth is mocked — any non-empty username and password will log you in. A flag is kept in
-localStorage; logging out clears it. Real auth (JWT/session) is intentionally out of scope.
+Auth is mocked per the brief ("no need for a full auth system, mock is fine"). Any non-empty
+username and password logs you in; the username is kept in localStorage and shown in the
+dashboard header, and logging out clears it. Real auth (JWT/session) is intentionally out of scope.
