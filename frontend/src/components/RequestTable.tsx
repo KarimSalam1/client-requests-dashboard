@@ -54,7 +54,14 @@ export default function RequestTable({ requests }: { requests: ClientRequest[] }
                     <StatusBadge status={req.status} />
                   </td>
                   <td className={`${td} text-slate-500 whitespace-nowrap`}>
-                    {new Date(req.createdAt).toLocaleDateString()}
+                    {new Date(req.createdAt).toLocaleString(undefined, {
+                      year: 'numeric',
+                      month: 'numeric',
+                      day: 'numeric',
+                      hour: '2-digit',
+                      minute: '2-digit',
+                      second: '2-digit',
+                    })}
                   </td>
                   <td className={`${td} text-right`}>
                     {next ? (
