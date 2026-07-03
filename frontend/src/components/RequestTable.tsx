@@ -60,14 +60,15 @@ export default function RequestTable({ requests }: { requests: ClientRequest[] }
                     {next ? (
                       <button
                         onClick={() => updateStatus.mutate({ id: req._id, status: next })}
-                        disabled={updateStatus.isPending}
-                        className="inline-flex items-center gap-1 rounded-lg border border-slate-300 px-2.5 py-1.5 text-xs font-medium text-slate-700 hover:bg-slate-50 hover:border-slate-400 disabled:opacity-50 disabled:cursor-not-allowed transition"
+                        title={`Move to ${next}`}
+                        className="inline-flex items-center gap-1.5 whitespace-nowrap rounded-lg bg-brand-50 px-3 py-1.5 text-xs font-medium text-brand-700 ring-1 ring-inset ring-brand-600/20 hover:bg-brand-100 transition"
                       >
-                        Move to {next}
-                        <span aria-hidden="true">→</span>
+                        Move to {next} <span aria-hidden="true">→</span>
                       </button>
                     ) : (
-                      <span className="text-slate-300">—</span>
+                      <span className="inline-flex items-center gap-1.5 whitespace-nowrap rounded-lg bg-slate-50 px-3 py-1.5 text-xs font-medium text-slate-400 ring-1 ring-inset ring-slate-200">
+                        Completed
+                      </span>
                     )}
                   </td>
                 </tr>
