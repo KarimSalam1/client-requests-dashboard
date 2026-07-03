@@ -21,15 +21,6 @@ npm run dev                             # starts backend + frontend together
 
 Frontend runs on http://localhost:5173, API on http://localhost:4000.
 
-### Using your own database instead
-
-If you'd rather run against your own MongoDB (local or Atlas), set `MONGODB_URI`
-in `backend/.env` to your instance, then load the sample data:
-
-```bash
-npm run seed --prefix backend           # seeds 4 sample requests
-```
-
 > **Note:** the Atlas cluster in `.env.example` is a disposable instance
 > scoped to sample data only, provided so the app runs with zero setup.
 
