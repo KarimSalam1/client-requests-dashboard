@@ -5,7 +5,9 @@ Express + TypeScript REST API for the client requests dashboard. Data lives in M
 ## Requirements
 
 - Node 18+
-- A MongoDB instance — local (`mongod`) or an Atlas connection string
+
+A hosted MongoDB Atlas cluster comes pre-configured in `.env.example`, already
+loaded with sample data — no database setup needed.
 
 ## Setup
 
@@ -15,19 +17,13 @@ npm install
 cp .env.example .env
 ```
 
-Then edit `.env`:
+`.env` variables:
 
 | Variable | Description | Default |
 | --- | --- | --- |
 | `PORT` | Port the API listens on | `4000` |
-| `MONGODB_URI` | Mongo connection string | `mongodb://localhost:27017/client-requests` |
+| `MONGODB_URI` | Mongo connection string | pre-configured Atlas cluster |
 | `CLIENT_ORIGIN` | Frontend origin allowed by CORS | `http://localhost:5173` |
-
-Seed some sample data (optional, wipes the collection first):
-
-```bash
-npm run seed
-```
 
 Run the dev server:
 
